@@ -9,6 +9,7 @@ public class Valoraciones {
 	private int puntuacion;
 	
 	private List<Cuadro> cuadros; 
+	private List<Usuario> usuarios;
 	
 	public Valoraciones(String cuadro, int puntuacion) {
 		super();
@@ -45,13 +46,16 @@ public class Valoraciones {
 	}
 
 	
-	public void puntuarCuadro(int puntuacion) {
+	public void puntuarCuadro(Usuario usuario, int puntuacion) {
+		
 		if((puntuacion < 0 ) || (puntuacion > 5)) {
 			System.out.println("Solo se puede puntuar entre 0 y 5");
-		}else
-		{
-		System.out.println("Cuadro Puntuado");
 		}
+		if (!usuarios.contains(usuario)) {
+			System.out.println("Tienes que registrate antes");
+			
+		}
+		
 	}		
 }
 
